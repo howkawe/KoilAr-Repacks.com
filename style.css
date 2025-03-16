@@ -96,28 +96,3 @@ body {
 .download:hover {
     background: #e05500;
 }
-
-/* Сообщение "Игры не найдены" */
-#no-results {
-    font-size: 18px;
-    color: red;
-    margin-top: 20px;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #f39c12;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.4);
-}
-
-.download-btn:hover {
-    background: #e67e22;
-    transform: scale(1.05);
-}
