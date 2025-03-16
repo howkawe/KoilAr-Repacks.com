@@ -8,20 +8,33 @@
 </head>
 <body>
 
-    <!-- Меню навигации -->
+    <!-- Меню навигации с поиском -->
     <nav class="navbar">
-        <div class="logo">Лучшие игры бесплатно</div>
+        <div class="logo">Лучшие игры бесплатно!</div>
         <ul class="nav-links">
             <li><a href="index.html">Главная</a></li>
             <li><a href="about.html">О нас</a></li>
             <li><a href="contact.html">Контакты</a></li>
         </ul>
+        <!-- Форма поиска -->
+        <form class="search-form" onsubmit="searchGame(event)">
+            <input type="text" id="search-input" placeholder="Поиск игр...">
+            <button type="submit">🔍</button>
+        </form>
     </nav>
 
     <div class="content">
         <h1>Добро пожаловать на сайт с торрент-играми!</h1>
         <p>Выбирайте и скачивайте лучшие игры бесплатно.</p>
     </div>
+
+    <script>
+        function searchGame(event) {
+            event.preventDefault(); // Предотвращает перезагрузку страницы
+            let query = document.getElementById("search-input").value.toLowerCase();
+            alert("Вы ищете: " + query); // Можно заменить на реальный поиск
+        }
+    </script>
 
 </body>
 </html>
