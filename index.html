@@ -3,87 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Торрент Игры</title>
+    <title>KoilAr repacks</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Меню навигации с поиском -->
+    <!-- Меню навигации -->
     <nav class="navbar">
-        <div class="logo">Torrent Games</div>
+        <div class="logo">Лучшие игры бесплатно</div>
         <ul class="nav-links">
             <li><a href="index.html">Главная</a></li>
-            <li><a href="games.html">Игры</a></li>
             <li><a href="about.html">О нас</a></li>
             <li><a href="contact.html">Контакты</a></li>
         </ul>
-        <!-- Поле поиска -->
-        <form class="search-form">
-            <input type="text" id="search-input" placeholder="Поиск игр..." onkeyup="searchGames()">
-        </form>
     </nav>
 
-    <!-- Контент -->
     <div class="content">
-        <h1>Список игр</h1>
-        <div id="games-list">
-            <div class="game" data-title="GTA 5">
-                <img src="images/gta5.jpg" alt="GTA 5">
-                <h2>GTA 5</h2>
-                <p>Открытый мир, криминал, экшен.</p>
-                <a href="files/gta5.torrent" download class="download">Скачать</a>
-            </div>
-
-            <div class="game" data-title="The Witcher 3">
-                <img src="images/witcher3.jpg" alt="The Witcher 3">
-                <h2>The Witcher 3</h2>
-                <p>Фэнтези, РПГ, отличный сюжет.</p>
-                <a href="files/witcher3.torrent" download class="download">Скачать</a>
-            </div>
-
-            <div class="game" data-title="Cyberpunk 2077">
-                <img src="images/cyberpunk.jpg" alt="Cyberpunk 2077">
-                <h2>Cyberpunk 2077</h2>
-                <p>Киберпанк, будущее, экшен.</p>
-                <a href="files/cyberpunk.torrent" download class="download">Скачать</a>
-            </div>
-
-            <div class="game" data-title="Liar's Bar">
-                <img src="images/minecraft.jpg" alt="Minecraft">
-                <h2>Liar's Bar</h2>
-                <p>-.</p>
-                <a href="files/minecraft.torrent" download class="download">Скачать</a>
-            </div>
-
-            <div class="game" data-title="Dark Souls 3">
-                <img src="images/darksouls3.jpg" alt="Dark Souls 3">
-                <h2>Dark Souls 3</h2>
-                <p>Хардкор, боссы, сложные битвы.</p>
-                <a href="files/darksouls3.torrent" download class="download">Скачать</a>
-            </div>
-        </div>
-        <p id="no-results" style="display: none;">Игры не найдены</p>
+        <h1>Добро пожаловать на сайт с торрент-играми!</h1>
+        <p>Выбирайте и скачивайте лучшие игры бесплатно.</p>
     </div>
 
-    <script>
-        function searchGames() {
-            let input = document.getElementById("search-input").value.toLowerCase();
-            let games = document.querySelectorAll(".game");
-            let found = false;
-
-            games.forEach(game => {
-                let title = game.getAttribute("data-title").toLowerCase();
-                if (title.includes(input)) {
-                    game.style.display = "block";
-                    found = true;
-                } else {
-                    game.style.display = "none";
-                }
-            });
-
-            document.getElementById("no-results").style.display = found ? "none" : "block";
+</body>
+</html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
         }
-    </script>
-
+        .game {
+            background: white;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            width: 300px;
+        }
+        .game img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .download {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Репаки от KoilAr</h1>
+    <div class="game">
+        <img src="liar's bar.jpg" alt="Игра 1"
+        <h2>Liar's Bar</h2>
+        <p>Обманите всех и станьте победителем</p>
+        <a href="Liar's bar.torrent" download class="download">Скачать</a>
+    </div>
+    <div class="game">
+        <img src="game2.jpg" alt="Игра 2">
+        <h2>Игра 2</h2>
+        <p>Описание игры 2.</p>
+        <a href="#" class="download">Скачать</a>
+    </div>
+    <div class="game">
+        <img src="game3.jpg" alt="Игра 3">
+        <h2>Игра 3</h2>
+        <p>Описание игры 3.</p>
+        <a href="#" class="download">Скачать</a>
+    </div>
+    <div class="game">
+        <img src="game4.jpg" alt="Игра 4">
+        <h2>Игра 4</h2>
+        <p>Описание игры 4.</p>
+        <a href="#" class="download">Скачать</a>
+    </div>
+    <div class="game">
+        <img src="game5.jpg" alt="Игра 5">
+        <h2>Игра 5</h2>
+        <p>Описание игры 5.</p>
+        <a href="#" class="download">Скачать</a>
+    </div>
 </body>
 </html>
