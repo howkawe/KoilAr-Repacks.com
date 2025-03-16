@@ -3,36 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KoilAr repacks</title>
+    <title>Торрент Игры</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Меню навигации с поиском -->
     <nav class="navbar">
-        <div class="logo">Лучшие игры бесплатно!</div>
+        <div class="logo">Torrent Games</div>
         <ul class="nav-links">
             <li><a href="index.html">Главная</a></li>
+            <li><a href="games.html">Игры</a></li>
             <li><a href="about.html">О нас</a></li>
             <li><a href="contact.html">Контакты</a></li>
         </ul>
-        <!-- Форма поиска -->
-        <form class="search-form" onsubmit="searchGame(event)">
-            <input type="text" id="search-input" placeholder="Поиск игр...">
-            <button type="submit">🔍</button>
+        <!-- Поле поиска -->
+        <form class="search-form">
+            <input type="text" id="search-input" placeholder="Поиск игр..." onkeyup="searchGames()">
         </form>
     </nav>
 
+    <!-- Контент -->
     <div class="content">
-        <h1>Добро пожаловать на сайт с торрент-играми!</h1>
-        <p>Выбирайте и скачивайте лучшие игры бесплатно.</p>
+        <h1>Список игр</h1>
+        <div id="games-list">
+            <div class="game" data-title="GTA 5">
+                <img src="images/gta5.jpg" alt="GTA 5">
+                <h2>GTA 5</h2>
+                <p>Открытый мир, криминал, экшен.</p>
+                <a href="files/gta5.torrent" download class="download">Скачать</a>
+            </div>
+
+            <div class="game" data-title="The Witcher 3">
+                <img src="images/witcher3.jpg" alt="The Witcher 3">
+                <h2>The Witcher 3</h2>
+                <p>Фэнтези, РПГ, отличный сюжет.</p>
+                <a href="files/witcher3.torrent" download class="download">Скачать</a>
+            </div>
+
+            <div class="game" data-title="Cyberpunk 2077">
+                <img src="images/cyberpunk.jpg" alt="Cyberpunk 2077">
+                <h2>Cyberpunk 2077</h2>
+                <p>Киберпанк, будущее, экшен.</p>
+                <a href="files/cyberpunk.torrent" download class="download">Скачать</a>
+            </div>
+
+            <div class="game" data-title="Minecraft">
+                <img src="images/minecraft.jpg" alt="Minecraft">
+                <h2>Liar's Bar</h2>
+                <p>-.</p>
+                <a href="files/minecraft.torrent" download class="download">Скачать</a>
+            </div>
+
+            <div class="game" data-title="Dark Souls 3">
+                <img src="images/darksouls3.jpg" alt="Dark Souls 3">
+                <h2>Dark Souls 3</h2>
+                <p>Хардкор, боссы, сложные битвы.</p>
+                <a href="files/darksouls3.torrent" download class="download">Скачать</a>
+            </div>
+        </div>
+        <p id="no-results" style="display: none;">Игры не найдены</p>
     </div>
 
     <script>
-        function searchGame(event) {
-            event.preventDefault(); // Предотвращает перезагрузку страницы
-            let query = document.getElementById("search-input").value.toLowerCase();
-            alert("Вы ищете: " + query); // Можно заменить на реальный поиск
+        function searchGames() {
+            let input = document.getElementById("search-input").value.toLowerCase();
+            let games = document.querySelectorAll(".game");
+            let found = false;
+
+            games.forEach(game => {
+                let title = game.getAttribute("data-title").toLowerCase();
+                if (title.includes(input)) {
+                    game.style.display = "block";
+                    found = true;
+                } else {
+                    game.style.display = "none";
+                }
+            });
+
+            document.getElementById("no-results").style.display = found ? "none" : "block";
         }
     </script>
 
