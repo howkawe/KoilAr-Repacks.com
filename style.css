@@ -96,3 +96,10 @@ body {
 .download:hover {
     background: #e05500;
 }
+
+/* Сообщение "Игры не найдены" */
+#no-results {
+    font-size: 18px;
+    color: red;
+    margin-top: 20px;
+}
