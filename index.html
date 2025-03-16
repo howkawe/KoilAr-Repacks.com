@@ -74,6 +74,28 @@
             color: #aaaaaa;
         }
 
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0.95); }
+        }
+
+        .game {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .game.hidden {
+            animation: fadeOut 0.3s ease-in-out;
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+
         /* Контент */
         .content {
             width: 80%;
@@ -178,7 +200,7 @@
         <div class="game" data-title="Liar's Bar">
             <img src="liar's bar.jpg" alt="Liar's Bar">
             <h2>Liar's Bar</h2>
-            <p>Обманите своих друзей, чтобы победить.(запускайте со steam,будет доступен онлайн режим)</p>
+            <p>Обманите своих друзей, чтобы победить.</p>
             <a href="Liar's bar setup_original.torrent" download class="download">Скачать</a>
             <a href="magnet:?xt=urn:btih:7e25f23c3e607845a657794c510c09f14ec59a60" class="magnet-link">Magnet-ссылка</a>
         </div>
@@ -186,7 +208,7 @@
         <div class="game" data-title="GTA 2">
             <img src="gta 2.jpg" alt="GTA 2">
             <h2>GTA 2</h2>
-            <p>Приключенческий боевик. Серия GTA возвращается!(запускайте от имени администратора)</p>
+            <p>Приключенческий боевик. Серия GTA возвращается!</p>
             <a href="GTA 2 setup by KoilAr.torrent" download class="download">Скачать</a>
             <a href="magnet:?xt=urn:btih:89fc6d24255688ed7971134f81e1b8b6e9670e87" class="magnet-link">Magnet-ссылка</a>
         </div>
@@ -217,10 +239,10 @@
         games.forEach(game => {
             let title = game.getAttribute("data-title").toLowerCase();
             if (title.includes(input)) {
-                game.style.display = "block";
+                game.classList.remove("hidden");
                 found = true;
             } else {
-                game.style.display = "none";
+                game.classList.add("hidden");
             }
         });
 
