@@ -3,52 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KoilAr repacks</title>
+    <title>Контакты | KoilAr Repacks</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-</body>
-</html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="koilar.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Общие стили */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
             text-align: center;
-            padding: 20px;
         }
-        .game {
-            background: white;
-            padding: 15px;
-            margin: 15px;
+
+        /* Навигация */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e1e1e;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        /* Контактная информация */
+        .contact-container {
+            width: 60%;
+            margin: auto;
+            padding: 40px;
+            background: #1e1e1e;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: inline-block;
-            width: 300px;
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.2);
+            margin-top: 50px;
+            animation: fadeIn 0.8s ease-in-out;
         }
-        .game img {
-            max-width: 100%;
-            border-radius: 5px;
+
+        .contact-container h1 {
+            color: #f39c12;
+            font-size: 28px;
         }
-        .download {
+
+        .contact-container p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .contact-container a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Кнопка возврата */
+        .back-btn {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 20px;
             padding: 10px 20px;
-            background: #28a745;
+            background: #f39c12;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #e67e22;
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Подвал */
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            background: #1e1e1e;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">KoilAr Repacks</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="contact.html">Контакты</a></li>
-        </ul>
+
+<!-- Навигация -->
+<nav class="navbar">
+    <div class="logo">KoilAr Repacks</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+    </ul>
+</nav>
+
+<!-- Контакты -->
+<div class="contact-container">
+    <h1>Наши контакты</h1>
+    <p><strong>Email:</strong> <a href="mailto:support@koilar.com">support@koilar.com</a></p>
+    <p><strong>Telegram:</strong> <a href="https://t.me/koilar_repacks" target="_blank">@koilar_repacks</a></p>
+    <p><strong>Discord:</strong> <a href="https://discord.gg/koilar" target="_blank">Присоединиться</a></p>
+    <p><strong>Twitter:</strong> <a href="https://twitter.com/koilar" target="_blank">@koilar</a></p>
+    <a href="index.html" class="back-btn">На главную</a>
+</div>
+
+<!-- Подвал -->
+<footer>
+    <p>© 2025 KoilAr | Все права защищены</p>
+</footer>
+
+</body>
+</html>
