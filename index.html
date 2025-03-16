@@ -3,40 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KoilAr repacks</title>
+    <title>KoilAr Repacks | Репаки игр</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="koilar.png"> 
+    <link rel="icon" type="image/png" href="koilar.png">
     <link rel="icon" type="image/x-icon" href="koilar.ico">
     <link rel="shortcut icon" href="koilar.ico">
-</head>
-<body>
-</body>
-</html>
-<html lang="ru">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Общий стиль */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
             text-align: center;
+        }
+
+        /* Навигация */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e1e1e;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        /* Поиск */
+        .search-form {
+            margin-left: auto;
+        }
+
+        .search-form input {
+            padding: 8px;
+            border: 1px solid #f39c12;
+            border-radius: 5px;
+            background: #1e1e1e;
+            color: white;
+            outline: none;
+        }
+
+        .search-form input::placeholder {
+            color: #aaaaaa;
+        }
+
+        /* Контент */
+        .content {
+            width: 80%;
+            margin: auto;
             padding: 20px;
         }
-        .game {
-            background: white;
-            padding: 15px;
-            margin: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: inline-block;
-            width: 300px;
+
+        h1 {
+            color: #f39c12;
         }
+
+        /* Карточки игр */
+        .games-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .game {
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .game:hover {
+            transform: scale(1.05);
+        }
+
         .game img {
             max-width: 100%;
             border-radius: 5px;
         }
+
         .download {
             display: inline-block;
             margin-top: 10px;
@@ -45,71 +120,113 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .download:hover {
+            background: #218838;
+        }
+
+        .magnet-link {
+            display: block;
+            margin-top: 5px;
+            color: #f39c12;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .magnet-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Сообщение "Игры не найдены" */
+        #no-results {
+            display: none;
+            color: #ff4d4d;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Подвал */
+        footer {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1e1e1e;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">KoilAr Repacks</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="contact.html">Контакты</a></li>
-        </ul>
-        <!-- Поле поиска -->
-        <form class="search-form">
-            <input type="text" id="search-input" placeholder="Поиск игр..." onkeyup="searchGames()">
-        </form>
-    </nav>
+
+<!-- Навигация -->
+<nav class="navbar">
+    <div class="logo">KoilAr Repacks</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+    </ul>
+    <form class="search-form">
+        <input type="text" id="search-input" placeholder="Поиск игр..." onkeyup="searchGames()">
+    </form>
+</nav>
+
+<!-- Контент -->
+<div class="content">
+    <h1>Список игр</h1>
+    <div class="games-list" id="games-list">
+        <div class="game" data-title="Liar's Bar">
+            <img src="liars-bar.jpg" alt="Liar's Bar">
+            <h2>Liar's Bar</h2>
+            <p>Обманите своих друзей, чтобы победить.</p>
+            <a href="Liars-bar.torrent" download class="download">Скачать</a>
+            <a href="magnet:?xt=urn:btih:7e25f23c3e607845a657794c510c09f14ec59a60" class="magnet-link">Magnet-ссылка</a>
+        </div>
+
+        <div class="game" data-title="GTA 2">
+            <img src="gta-2.jpg" alt="GTA 2">
+            <h2>GTA 2</h2>
+            <p>Приключенческий боевик. Серия GTA возвращается!</p>
+            <a href="GTA-2.torrent" download class="download">Скачать</a>
+            <a href="magnet:?xt=urn:btih:89fc6d24255688ed7971134f81e1b8b6e9670e87" class="magnet-link">Magnet-ссылка</a>
+        </div>
+
+        <div class="game" data-title="Mouthwashing">
+            <img src="mouthwashing.jpg" alt="Mouthwashing">
+            <h2>Mouthwashing</h2>
+            <p>Пять членов экипажа застряли в открытом космосе.</p>
+            <a href="Mouthwashing.torrent" download class="download">Скачать</a>
+            <a href="magnet:?xt=urn:btih:ba4b5747fadcadf20ad8ea9b4277d79578d0466f" class="magnet-link">Magnet-ссылка</a>
+        </div>
+    </div>
+
+    <p id="no-results">Игры не найдены</p>
+</div>
+
+<!-- Подвал -->
 <footer>
     <p>© 2025 KoilAr | Все права защищены</p>
 </footer>
-    <!-- Контент -->
-    <div class="content">
-        <h1>Список игр</h1>
-        <div id="games-list">
-            <div class="game" data-title="Liar's Bar">
-                <img src="liar's bar.jpg" alt="Liar's Bar">
-                <h2>Liar's Bar</h2>
-                <p>Обманите своих друзей, чтобы победить.</p>
-                <a href="Liar's bar.torrent" download class="download">Скачать</a>
-                <a href="https://utweb.rainberrytv.com/gui/share.html#link=magnet%3A%3Fxt%3Durn%3Abtih%3A7e25f23c3e607845a657794c510c09f14ec59a60%26dn%3DLiar%2527s%2520bar%2520setup_original.exe%26tr%3Dudp%253a%252f%252ftracker.openbittorrent.com%253a80%252fannounce%26tr%3Dudp%253a%252f%252ftracker.opentrackr.org%253a1337%252fannounce">Magnet-ссылка</a>
-            </div>
-            <div class="game" data-title="GTA 2">
-                <img src="gta 2.jpg" alt="GTA 2">
-                <h2>Gta 2</h2>
-                <p>Приключенченский боевик,Серия GTA возвращается!</p>
-                <a href="GTA 2 setup by KoilAr.torrent" download class="download">Скачать</a>
-                <a href="https://utweb.rainberrytv.com/gui/share.html#link=magnet%3A%3Fxt%3Durn%3Abtih%3A89fc6d24255688ed7971134f81e1b8b6e9670e87%26dn%3DGTA%25202%2520setup%2520by%2520KoilAr.exe%26tr%3Dudp%253a%252f%252ftracker.openbittorrent.com%253a80%252fannounce%26tr%3Dudp%253a%252f%252ftracker.opentrackr.org%253a1337%252fannounce">Magnet-ссылка</a>
-            </div>
-            <div class="game" data-title="Mouthwashing">
-                <img src="mouthwashing.jpg" alt="mouthwashing">
-                <h2>Mouthwashing</h2>
-                <p>Пять членов экипажа космического корабля «Тулпар» застряли в открытом космосе. Вокруг — вечный закат.</p>
-                <a href="Mouthwashing setup.torrent" download class="download">Скачать</a>
-                <a href="https://utweb.rainberrytv.com/gui/share.html#link=magnet%3A%3Fxt%3Durn%3Abtih%3Aba4b5747fadcadf20ad8ea9b4277d79578d0466f%26dn%3DMouthwashing%2520setup.exe%26tr%3Dudp%253a%252f%252ftracker.openbittorrent.com%253a80%252fannounce%26tr%3Dudp%253a%252f%252ftracker.opentrackr.org%253a1337%252fannounce">Magnet-ссылка</a>
-            </div>
-        <p id="no-results" style="display: none;">Игры не найдены</p>
-         </div>
-    <script>
-        function searchGames() {
-            let input = document.getElementById("search-input").value.toLowerCase();
-            let games = document.querySelectorAll(".game");
-            let found = false;
 
-            games.forEach(game => {
-                let title = game.getAttribute("data-title").toLowerCase();
-                if (title.includes(input)) {
-                    game.style.display = "block";
-                    found = true;
-                } else {
-                    game.style.display = "none";
-                }
-            });
+<script>
+    function searchGames() {
+        let input = document.getElementById("search-input").value.toLowerCase();
+        let games = document.querySelectorAll(".game");
+        let found = false;
 
-            document.getElementById("no-results").style.display = found ? "none" : "block";
-        }
-    </script>
+        games.forEach(game => {
+            let title = game.getAttribute("data-title").toLowerCase();
+            if (title.includes(input)) {
+                game.style.display = "block";
+                found = true;
+            } else {
+                game.style.display = "none";
+            }
+        });
+
+        document.getElementById("no-results").style.display = found ? "none" : "block";
+    }
+</script>
 
 </body>
 </html>
